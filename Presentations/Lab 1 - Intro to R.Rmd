@@ -56,7 +56,7 @@ whr <- read.csv(file.path(finalData,"whr_panel.csv"),
 
 ## Introduction
 
-These training sessions will offer a quick introduction to R, its amazing features and why it is so much better than Stata. 
+These training sessions will offer a quick introduction to R, its amazing features and why it is so much better than Stata (and Excel). 
 
 ## Introduction
 
@@ -64,11 +64,11 @@ This first session will present the basic concepts you will need to use R.
 
 The next sessions will include:
 
- * __Exporting summary statistics and regression tables__ (Nov 20)
- * __Creating awesome-looking plots__ (Nov 29)
- * __Writing reproducible and readable code__ (Dec 6)
- * __Creating awesome-looking maps__ (Dec 13)
- * __Cleaning data__ (Dec 20)
+ * __Exporting summary statistics and regression tables__
+ * __Creating awesome-looking plots__
+ * __Writing reproducible and readable code__
+ * __Creating awesome-looking maps__
+ * __Cleaning data__
 
 
 For the most recent versions of these trainings, visit the R-training GitHub repo at
@@ -76,6 +76,18 @@ https://github.com/worldbank/dime-r-training
 
 (currently under the 'development' branch)
 
+## Introduction
+
+Why not using Excel?
+
+ * Reproducibility of your results.
+    + When you add new lines to your data, you don't have to change your analysis.
+    + You can re-use your code (or anyone elses) with small changes with entirely different data.
+    + Someone else (or your future self) can read your code and see every step of the analysis.
+ * R is much faster and can do MUCH more.
+ * R is more forgiving with errors:
+    + When you open a sheet in R, you create a virtual copy. So you never change the original file.  
+    + Data and analysis are separate, so it is easier to see what's wrong.
 
 ## Introduction
 
@@ -221,9 +233,9 @@ Let's start by loading the data set we'll be using:
   \includegraphics[width=12cm,height=7.7cm]{img/scritpt4.png}
 \end{figure}
 
-# Object-oriented language
+# Data in R
 
-## Object-oriented language
+## Data in R
 
  * In Stata, you can open ONE dataset, and perform operations that can change this dataset.
 
@@ -233,7 +245,7 @@ Let's start by loading the data set we'll be using:
 
  * R works in a completely different way: you can have as many datasets (objects) as you wish (or your computer's memory allows) and operations will only have lasting effects if you store them.
 
-## Object-oriented language
+## Data in R
 
 * Everything that exists in R's memory -- variables, datasets, functions -- is an object.
 
@@ -245,7 +257,7 @@ Let's start by loading the data set we'll be using:
 
 
 
-## Object-oriented language
+## Data in R
 
 To better understand the idea, we're going to use the data from the United Nations' World Happiness Report. First, let's take a look at the data.
 
@@ -260,14 +272,14 @@ head(whr)
 
 ```
 
-## Object-oriented language
+## Data in R
 
 \begin{figure}
 \centering
   \includegraphics[scale=0.4]{img/View.png}
 \end{figure}
 
-## Object-oriented language
+## Data in R
 \scriptsize
 
 ```{r, include = T}
@@ -276,7 +288,7 @@ head(whr)
 
 ```
 
-## Object-oriented language
+## Data in R
 
 Now, let's try some simple manipulations. First, assume we're only interested in data of the year 2015.
 
@@ -296,7 +308,7 @@ subset(whr, year == 2015)
 head(whr)
 ```
 
-## Object-oriented language
+## Data in R
 \scriptsize
 
 ```{r, eval = F}
@@ -308,7 +320,7 @@ head(whr)
 head(whr[,1:12])
 ```
 
-## Object-oriented language
+## Data in R
 
 We can see that nothing happened to the original data. This happens because we didn't store the edit we made anywhere.
 
@@ -322,7 +334,7 @@ x <- 42
 
 From now on, *x* is associated with the stored value (until you replace it delete it or close R).
 
-## Object-oriented language
+## Data in R
 
 ### Exercise 3: Create an object
 
@@ -340,7 +352,7 @@ head(whr)
 
 ```
 
-## Object-oriented language
+## Data in R
 \scriptsize
 
 ```{r, eval= F}
@@ -353,7 +365,7 @@ head(whr2015[,1:12])
 ```
 
 
-## Object-oriented language
+## Data in R
 \scriptsize
 
 ```{r, eval= F}
@@ -366,7 +378,7 @@ head(whr[,1:12])
 ```
 
 
-## Object-oriented language
+## Data in R
 
 You can also see that your environment pane now has two objects:
 
@@ -375,7 +387,7 @@ You can also see that your environment pane now has two objects:
   \includegraphics[scale=0.5]{img/enviroment_2vars.png}
 \end{figure}
 
-## Object-oriented language
+## Data in R
 
 ### Two important concepts to take note:
  1. In R, if you want to change your data, you need to store it in an object.
